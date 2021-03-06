@@ -35,10 +35,10 @@
         <!-- Player -->
         <a-entity camera
                   wasd-controls="acceleration: 20"
-                  position="0 1.8 0"
+                  position="0 1.8 1.0"
                   look-controls="pointerLockEnabled: true">
             <a-entity cursor
-                      event-click_visible="_event:click; visible:true"
+                      event-set__makevisible="_event: mouseenter; visible: true"
                       position="0 0 -1"
                       geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
                       material="color: #CCC; shader: flat;"></a-entity>
@@ -50,7 +50,8 @@
         <!-- <a-entity position="0.063 1.812 0.000" light="type:  point;  target:  #painting;  color:  #f7f7f7;  decay:  0.88;  distance:  4.95;  intensity:  4.19"></a-entity> -->
         <a-entity id="statue" dynamic-body="shape: box; mass: 2" position="0 1.250 0.432" 
                   animation="property: rotation; from: 0 -30 0; to: 0 330 0; dur: 15000; easing: linear; loop: false"
-                  event-click__click="_event:click; animation.loop:true"
+                  event-set__enter="_event: mouseenter; animation.loop:true"
+                  event-set__leave="_event: mouseenter; animation.loop:false"
                   obj-model="obj: #hercules-obj; mtl: #hercules-mtl" scale="0.03 0.03 0.03"></a-entity>
         <a-entity id="pedestal" dynamic-body="shape: box; mass: 2" position="0 0 0.432" rotation="-90.000 0 0" obj-model="obj: #pedestal-obj; mtl: #pedestal-mtl" scale="0.015 0.015 0.015"></a-entity>
 
